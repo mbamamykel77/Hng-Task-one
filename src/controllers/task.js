@@ -1,19 +1,20 @@
 const info = async (req, res) => {
   try {
-    const slackName = req.query.slack_name || "Chigozie Mbama (Mykel)";
-    const track = req.query.track || "Backend Track";
-    const currentDayOfWeek = new Date().toLocaleString("en-US", { weekday: "long",});
-    const currentUTC = new Date().toUTCString();
-    const githubFileURL = "https://github.com/yourusername/yourrepo/blob/main/yourfile.js";
-    const githubSourceCodeURL = "https://github.com/yourusername/yourrepo";
+    const slack_name = req.query.slack_name || "Chigozie Mbama (Mykel)";
+    const track = req.query.track || "Backend";
+    const current_day = new Date().toLocaleString("en-US", { weekday: "long",});
+    const utc_time = new Date().toUTCString();
+    const github_file_url = "https://github.com/yourusername/yourrepo/blob/main/yourfile.js";
+    const github_repo_url = "https://github.com/mbamamykel77/Zuri-Task-1";
 
     const response = {
-      slackName,
+      slack_name,
       track,
-      currentDayOfWeek,
-      currentUTC,
-      githubFileURL,
-      githubSourceCodeURL,
+      current_day,
+      utc_time,
+      github_file_url,
+      github_repo_url,
+      "status_code": 200
     };
 
     res.status(200).json(response);
